@@ -1,20 +1,20 @@
 {
-  "version": "2",
-  "services": {
-    "web": {
-      "build": ".",
-      "volumes": ["./:/src"],
-      "working_dir": "/src",
-      "command": "npm start",
-      "ports": ["8080:3000"],
-      "links": ["mongo"],
-      "environment": {
-        "DB_NAME": "mongo"
-      }
-    },
-    "mongo": {
-      "image": "mongo",
-      "ports": ["27017:27017"]
+    "version": "2",
+    "services": {
+        "web": {
+            "build": ".",
+            "volumes": ["./:/src"],
+            "working_dir": "/src",
+            "command": "npm start",
+            "ports": ["8080:3000"],
+            "links": ["mongo"],
+            "environment": {
+                "DB_NAME": "mongo"
+            }
+        },
+        "mongo": {
+            "image": "mongo",
+            "ports": ["27017:27017"]
+        }
     }
-  }
 }
